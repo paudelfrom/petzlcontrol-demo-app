@@ -66,7 +66,7 @@ export default function Login() {
           <Image
             resizeMode="contain"
             style={styles.logo}
-            source={require("../../../assets/img/logoprolians.png")}
+            source={require("../../../assets/img/logopetzl.png")}
           ></Image>
 
           <View style={styles.viewContainer}>
@@ -103,11 +103,11 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
   },
   logo: {
-    height: 250,
+    height: 100,
     width: "100%",
     alignItems: "center",
     /*  backgroundColor: "blue", */
-    marginTop: 150,
+    marginTop: 180,
   },
   viewContainer: {
     /*  flex: 1, */
@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
     margin: "10%",
     justifyContent: "center",
     /* backgroundColor: "red", */
-    paddingVertical: 60,
+    paddingVertical: 30,
   },
   accessProblems: {
     color: COLORS.secondary,

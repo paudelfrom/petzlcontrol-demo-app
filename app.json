@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "METALCO PRO",
-    "slug": "metalco-trace-pre",
-    "version": "1.0.15",
+    "name": "PetzlControl",
+    "slug": "petzl-control-demo",
+    "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -17,14 +17,14 @@
     "ios": {
       "supportsTablet": false,
       "infoPlist": {
-        "NSCameraUsageDescription": "METALCO PRO usa la cámara para escanear los códigos QR y Datamatrix de los equipos.",
-        "NSMicrophoneUsageDescription": "Permite a METALCO PRO acceder al micrófono",
-        "NSLocationWhenInUseUsageDescription": "METALCO PRO usa tu localización para ubicar tus activos.",
-        "NSLocationAlwaysAndWhenInUseUsageDescription": "METALCO PRO usa tu localización para ubicar tus activos.",
-        "NSLocationAlwaysUsageDescription": "METALCO PRO usa tu localización para ubicar tus activos."
+        "NSCameraUsageDescription": "PetzlControl usa la cámara para escanear los códigos QR y Datamatrix de los equipos.",
+        "NSMicrophoneUsageDescription": "Permite a PetzlControl acceder al micrófono",
+        "NSLocationWhenInUseUsageDescription": "PetzlControl usa tu localización para ubicar tus activos.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "PetzlControl usa tu localización para ubicar tus activos.",
+        "NSLocationAlwaysUsageDescription": "PetzlControl usa tu localización para ubicar tus activos."
       },
-      "buildNumber": "1.0.15",
-      "bundleIdentifier": "es.pinchaaqui.tracepre"
+      "buildNumber": "1.0.0",
+      "bundleIdentifier": "com.delfrom.petzlcontroldemo"
     },
     "android": {
       "adaptiveIcon": {
@@ -39,8 +39,8 @@
         "android.permission.CAMERA",
         "android.permission.RECORD_AUDIO"
       ],
-      "package": "es.pinchaaqui.tracepre",
-      "versionCode": 14
+      "package": "com.delfrom.petzlcontroldemo",
+      "versionCode": 1
     },
     "web": {
       "favicon": "./assets/favicon.png"

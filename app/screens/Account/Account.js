@@ -52,7 +52,7 @@ export default function Account(params) {
   const [userData, setUserData] = useState({});
 
   const [offset, setOffset] = useState(1);
-  const [limit, setLimit] = useState(10);
+  const [limit, setLimit] = useState(99);
 
   useEffect(() => {
     setOffset(1);
@@ -82,10 +82,10 @@ export default function Account(params) {
   );
 
   async function loadAssets(nuevoOffset) {
-    var off = nuevoOffset;
+    /*   var off = nuevoOffset;
     if (!off) {
       off = offset;
-    }
+    } */
     var requestURL = BASEPATH + "/api/assets/list";
     console.log(requestURL);
 
@@ -99,7 +99,7 @@ export default function Account(params) {
     //  setIsLoading(true);
     setIsFetching(true);
 
-    console.log("OFFSET:: ", off);
+    // console.log("OFFSET:: ", off);
 
     var config = {
       method: "post",
@@ -112,7 +112,7 @@ export default function Account(params) {
       data: {
         id_client: usuario.clients[0].id,
         per_page: limit,
-        page: off,
+        page: 1,
       },
     };
     await axios(config)
@@ -124,15 +124,15 @@ export default function Account(params) {
           //    console.log(response);
           response = response.data;
 
-          if (offset > 1) {
+          /*  if (offset > 1) {
             var prods = [...assets, ...response.data];
             setAssets(prods);
             var prodsS = [...assetsSearch, ...response.data];
             setAssetsSearch(prodsS);
-          } else {
-            setAssets(response.data);
-            setAssetsSearch(response.data);
-          }
+          } else { */
+          setAssets(response.data);
+          setAssetsSearch(response.data);
+          /*  } */
 
           if (search.length > 0) {
             buscaAssets(search);
@@ -365,7 +365,7 @@ export default function Account(params) {
                 type="material-community"
                 name="dots-horizontal"
                 size={24}
-                color="#213F87"
+                color="#000"
               />
             }
           />
@@ -391,7 +391,7 @@ export default function Account(params) {
             type="material-community"
             name="arrow-right"
             size={24}
-            color="#213F87"
+            color="#000"
             style={{ paddingRight: 20 }}
           />
         </View>
@@ -421,8 +421,8 @@ export default function Account(params) {
         onRefresh={() => onRefresh()}
         refreshing={isFetching}
         contentContainerStyle={{ paddingBottom: 30 }}
-        onEndReached={handleLoadMore}
-        onEndReachedThreshold={0.9}
+        /*      onEndReached={handleLoadMore}
+        onEndReachedThreshold={0.9} */
       ></FlatList>
       <Overlay
         isVisible={visibleOverlay}
@@ -491,7 +491,7 @@ export default function Account(params) {
 
   async function onRefresh() {
     setIsFetching(true);
-    setOffset(1);
+    /*  setOffset(1); */
     setAssets([]);
     console.log("offset ", 1);
     await loadAssets();

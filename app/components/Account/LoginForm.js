@@ -218,10 +218,12 @@ export default function LoginForm(props) {
         placeholder={i18n.t("login.user")}
         onChange={(e) => onChange(e, "username")}
         autoCapitalize="none"
+        value={formData.username}
       ></Input>
       <Input
         placeholder={i18n.t("login.password")}
         password={true}
+        value={formData.password}
         onChange={(e) => onChange(e, "password")}
         secureTextEntry={showPassword ? false : true}
         rightIcon={
@@ -248,7 +250,7 @@ export default function LoginForm(props) {
 
 function defaultFormValue() {
   return {
-    username: "sheila+metalco@pinchaaqui.es",
+    username: "pmanuel@delfrom.com",
     password: "password",
   };
 }

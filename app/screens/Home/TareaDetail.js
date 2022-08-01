@@ -33,7 +33,7 @@ export default function ProductDetail(params) {
 
   var tarea = params.route.params.tarea;
   console.log("item:: ", tarea);
-  console.log("uri:: ", "https://prolianstrace.com/tasks/" + tarea.id);
+  console.log("uri:: ", "https://controlepi.com/tasks/" + tarea.id);
 
   useFocusEffect(
     useCallback(() => {
@@ -74,7 +74,7 @@ export default function ProductDetail(params) {
     <SafeAreaView style={styles.container}>
       <WebView
         source={{
-          uri: "https://prolianstrace.com/tasks/" + task.id,
+          uri: "https://controlepi.com/tasks/" + task.id,
         }}
         style={{ height: "80%", marginVertical: 20 }}
         scalesPageToFit={Platform.OS === "ios" ? false : true}

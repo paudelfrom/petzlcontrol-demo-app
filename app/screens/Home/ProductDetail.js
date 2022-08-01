@@ -47,7 +47,7 @@ export default function TaskInfo(params) {
     <SafeAreaProvider style={{ flex: 1 }}>
       <WebView
         source={{
-          uri: "https://prolianstrace.com/assets/" + idAsset,
+          uri: "https://controlepi.com/assets/" + idAsset,
         }}
         style={{ flex: 1 }}
         scalesPageToFit={Platform.OS === "ios" ? false : true}

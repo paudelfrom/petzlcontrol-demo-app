@@ -33,7 +33,7 @@ const SplashScreen = ({ navigation }) => {
           width: "45%",
           resizeMode: "contain",
         }}
-        source={require("../../assets/img/logoprolians.png")}
+        source={require("../../assets/img/logopetzl.png")}
       />
       <ActivityIndicator
         animating={animating}

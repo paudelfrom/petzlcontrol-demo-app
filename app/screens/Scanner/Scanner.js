@@ -78,7 +78,7 @@ export default function Scanner() {
     console.log(data);
 
     //Si es una url nuestra le llevamos:
-    if (data.includes("/prolianstrace.com/tasks/")) {
+    if (data.includes("/controlepi.com/tasks/")) {
       var idTarea = data.split("/")[data.split("/").length - 1];
       console.log("IDTAREA:: ", idTarea);
       /*  navigation.navigate("webViewScreen", {

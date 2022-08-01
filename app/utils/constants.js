@@ -1,1 +1,1 @@
-export const BASEPATH = "https://api.prolianstrace.com";
+export const BASEPATH = "https://api.controlepi.com";
