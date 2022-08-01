@@ -1,0 +1,51 @@
+{
+  "expo": {
+    "name": "METALCO PRO",
+    "slug": "metalco-trace-pre",
+    "version": "1.0.15",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": false,
+      "infoPlist": {
+        "NSCameraUsageDescription": "METALCO PRO usa la cámara para escanear los códigos QR y Datamatrix de los equipos.",
+        "NSMicrophoneUsageDescription": "Permite a METALCO PRO acceder al micrófono",
+        "NSLocationWhenInUseUsageDescription": "METALCO PRO usa tu localización para ubicar tus activos.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "METALCO PRO usa tu localización para ubicar tus activos.",
+        "NSLocationAlwaysUsageDescription": "METALCO PRO usa tu localización para ubicar tus activos."
+      },
+      "buildNumber": "1.0.15",
+      "bundleIdentifier": "es.pinchaaqui.tracepre"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      },
+      "permissions": [
+        "CAMERA",
+        "RECORD_AUDIO",
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO"
+      ],
+      "package": "es.pinchaaqui.tracepre",
+      "versionCode": 14
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "description": "",
+    "plugins": ["expo-barcode-scanner", "expo-camera"]
+  }
+}
