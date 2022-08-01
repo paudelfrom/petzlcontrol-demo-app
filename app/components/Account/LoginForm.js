@@ -250,7 +250,7 @@ export default function LoginForm(props) {
 
 function defaultFormValue() {
   return {
-    username: "pmanuel@delfrom.com",
+    username: "xguinot@mv.pe",
     password: "password",
   };
 }
