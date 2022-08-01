@@ -183,15 +183,15 @@ export default function Account(params) {
 
     var arrayActions = [
       { value: "incidence_asset", text: "Crear incidencia" },
-      { value: "locate_asset", text: "Ubicar" },
+      /*  { value: "locate_asset", text: "Ubicar" }, */
     ];
 
-    if (
+    /*   if (
       asset.status.id == 2 &&
       userData.roles[0].name == "prl_cliente" //PRL
     ) {
       arrayActions.push({ value: "delivery_epi", text: "Entrega de activo" });
-    }
+    } */
 
     /*  if (asset.status.id == 2 && asset.product.isEpi == 0) {
       arrayActions.push({
@@ -200,12 +200,12 @@ export default function Account(params) {
       });
     } */
 
-    if (asset.status.id == 3 && asset.product.isEpi == 0) {
+    /*  if (asset.status.id == 3 && asset.product.isEpi == 0) {
       arrayActions.push({
         value: "return_asset",
         text: "Devolución",
       });
-    }
+    } */
 
     if (asset.product.isEpi == 1 && userData.roles[0].name == "prl_cliente") {
       arrayActions.push({ value: "review_epi", text: "Revisar EPI" });

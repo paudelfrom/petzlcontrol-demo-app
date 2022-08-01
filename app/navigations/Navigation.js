@@ -35,6 +35,7 @@ import ScanList from "../screens/Scanner/ScanList";
 import ScannerReview from "../screens/Scanner/ScannerReview";
 import ScannerUbicar from "../screens/Scanner/ScannerUbicar";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import WebPetzl from "../screens/Home/WebPetzl";
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -84,11 +85,12 @@ const App = () => {
         component={ScannerStack}
         options={{ title: "" }}
       />
-      <Tab.Screen
+      {/*   <Tab.Screen
         name="mytasks"
         component={HomeStack}
         options={{ title: "" }}
-      />
+      /> */}
+      <Tab.Screen name="mytasks" component={WebPetzl} options={{ title: "" }} />
     </Tab.Navigator>
   );
 };
@@ -237,8 +239,8 @@ function screenOptions(route, color) {
       iconName = "calendar";
       return (
         <Image
-          style={{ width: 30, height: 30 }}
-          source={require("./../../assets/tareas_blanco.png")}
+          style={{ width: 50, height: 30 }}
+          source={require("./../../assets/petzl_blanco.png")}
         />
       );
     case "account":
