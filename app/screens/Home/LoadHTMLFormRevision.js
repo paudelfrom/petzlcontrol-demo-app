@@ -77,12 +77,10 @@ export default function LoadHTMLFormRevision(params) {
 
         console.log("ASSET:: ", params.route.params.asset);
 
-        console.log("LOCATION::2 ");
+        console.log("USER::  ", JSON.parse(userDataItem));
 
         let loc = await GetLocation();
         setLocation(loc);
-
-        console.log("NUEVALOC::", loc);
 
         if (loc.coords) {
           console.log(params.route.params.asset.url_form);
@@ -95,16 +93,32 @@ export default function LoadHTMLFormRevision(params) {
               params.route.params.asset.object.id +
               "&asset_name=" +
               params.route.params.asset.name +
+              "&asset_ns=" +
+              params.route.params.asset.serial_number +
               "&latitude=" +
               loc.coords.latitude +
               "&longitude=" +
               loc.coords.longitude +
+              "&company=" +
+              JSON.parse(userDataItem).clients[0].name +
+              /*   "&name[first]=" +
+              JSON.parse(userDataItem).name +
+              "&name[last]=" +
+              JSON.parse(userDataItem).surname + */
               "&next_review_date[day]=" +
               new Date().getDate() +
               "&next_review_date[month]=" +
               (new Date().getMonth() + 1) +
               "&next_review_date[year]=" +
               (new Date().getFullYear() + 1) +
+              /*     "&user_id=" +
+              JSON.parse(userDataItem).id + */
+              "&asset_manufacturing=" +
+              (new Date().getFullYear() - 1) +
+              "&fechaUtilizacion=" +
+              params.route.params.asset.fecha_compra +
+              "&buy_date=" +
+              params.route.params.asset.fecha_compra +
               "&user=" +
               JSON.parse(userDataItem).id
           );
@@ -195,16 +209,40 @@ export default function LoadHTMLFormRevision(params) {
               params.route.params.asset.object.id +
               "&asset_name=" +
               params.route.params.asset.name +
+              "&asset_ns=" +
+              params.route.params.asset.serial_number +
               "&latitude=" +
               location.coords.latitude +
               "&longitude=" +
               location.coords.longitude +
+              "&company=" +
+              userData.clients[0].name +
+              "&name[first]=" +
+              "Salvador" +
+              "&name[last]=" +
+              "Guinot" +
               "&next_review_date[day]=" +
               new Date().getDate() +
               "&next_review_date[month]=" +
               (new Date().getMonth() + 1) +
               "&next_review_date[year]=" +
               (new Date().getFullYear() + 1) +
+              "&user_id=" +
+              108 +
+              "&asset_manufacturing=" +
+              (new Date().getFullYear() - 1) +
+              "&fechaUtilizacion[day]=" +
+              "25/1/2022".split("/")[0] +
+              "&fechaUtilizacion[month]=" +
+              "25/1/2022".split("/")[1] +
+              "&fechaUtilizacion[year]=" +
+              "25/1/2022".split("/")[2] +
+              "&buy_date[day]=" +
+              "25/1/2022".split("/")[0] +
+              "&buy_date[month]=" +
+              "25/1/2022".split("/")[1] +
+              "&buy_date[year]=" +
+              "25/1/2022".split("/")[2] +
               "&user=" +
               userData.id,
           }}

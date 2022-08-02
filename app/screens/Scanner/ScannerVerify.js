@@ -211,7 +211,7 @@ export default function ScannerVerify() {
         <Camera
           onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
           barCodeScannerSettings={{
-            barCodeTypes: [BarCodeScanner.Constants.BarCodeType.qr],
+            barCodeTypes: [BarCodeScanner.Constants.BarCodeType.datamatrix],
           }}
           style={StyleSheet.absoluteFillObject}
         />

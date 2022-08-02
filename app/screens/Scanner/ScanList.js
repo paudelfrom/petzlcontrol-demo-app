@@ -282,7 +282,7 @@ export default function ScannerList(params) {
               : handleBarCodeScanned
           }
           barCodeScannerSettings={{
-            barCodeTypes: [BarCodeScanner.Constants.BarCodeType.qr],
+            barCodeTypes: [BarCodeScanner.Constants.BarCodeType.datamatrix],
           }}
           style={{ flex: 2 }}
         />

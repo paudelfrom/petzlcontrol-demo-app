@@ -33,7 +33,7 @@ export default function AccountStack() {
                   type="material-community"
                   name="logout"
                   size={30}
-                  color="#E76565"
+                  color="#000"
                   onPress={() => logout(navigation)}
                 />
               </TouchableOpacity>

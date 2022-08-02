@@ -200,7 +200,7 @@ export default function ScannerUbicar(params) {
               : handleBarCodeScanned
           }
           barCodeScannerSettings={{
-            barCodeTypes: [BarCodeScanner.Constants.BarCodeType.qr],
+            barCodeTypes: [BarCodeScanner.Constants.BarCodeType.datamatrix],
           }}
           style={StyleSheet.absoluteFillObject}
         />

@@ -74,7 +74,7 @@ export default function ScannerTarea(params) {
         <Camera
           onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
           barCodeScannerSettings={{
-            barCodeTypes: [BarCodeScanner.Constants.BarCodeType.qr],
+            barCodeTypes: [BarCodeScanner.Constants.BarCodeType.datamatrix],
           }}
           style={StyleSheet.absoluteFillObject}
         />

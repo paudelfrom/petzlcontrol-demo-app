@@ -157,7 +157,7 @@ export default function Scanner() {
                   qr: data,
                 });
 
-                currentTareas.push({
+                /*                 currentTareas.push({
                   name: "Crear incidencia",
                   code: "incidencia_epi",
                   image: require("./../../../assets/img/incidencia.png"),
@@ -180,7 +180,7 @@ export default function Scanner() {
                     image: require("./../../../assets/img/entrega.png"),
                     qr: data,
                   });
-                }
+                } */
 
                 /*   if (
                   objeto.object.data.status_asset_id == 2 &&
@@ -194,7 +194,7 @@ export default function Scanner() {
                   });
                 }
  */
-                if (
+                /*    if (
                   objeto.object.data.status_asset_id == 3 &&
                   objeto.object.isEpi == 0
                 ) {
@@ -204,7 +204,7 @@ export default function Scanner() {
                     image: require("./../../../assets/img/entrega.png"),
                     qr: data,
                   });
-                }
+                } */
 
                 if (
                   objeto.object.isEpi == 1 &&
@@ -218,14 +218,14 @@ export default function Scanner() {
                   });
                 }
 
-                if (objeto.object.isEpi == 0) {
+                /*   if (objeto.object.isEpi == 0) {
                   currentTareas.push({
                     name: "Revisar activo",
                     code: "revisar_asset",
                     image: require("./../../../assets/img/entregaEpi.png"),
                     qr: data,
                   });
-                }
+                } */
 
                 setTareas(currentTareas);
                 setVisible(true);
@@ -349,7 +349,7 @@ export default function Scanner() {
         <Camera
           onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
           barCodeScannerSettings={{
-            barCodeTypes: [BarCodeScanner.Constants.BarCodeType.qr],
+            barCodeTypes: [BarCodeScanner.Constants.BarCodeType.datamatrix],
           }}
           style={StyleSheet.absoluteFillObject}
         />
@@ -442,7 +442,7 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     backgroundColor: "#fff",
-    height: 400,
+    height: 300,
     padding: 20,
   },
   item: {
