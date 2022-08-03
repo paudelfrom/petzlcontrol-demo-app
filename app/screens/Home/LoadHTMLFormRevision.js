@@ -210,7 +210,9 @@ export default function LoadHTMLFormRevision(params) {
               "&asset_name=" +
               params.route.params.asset.name +
               "&asset_ns=" +
-              params.route.params.asset.serial_number +
+              (params.route.params.asset.serial_number
+                ? params.route.params.asset.serial_number
+                : params.route.params.asset.object.data.serial_number) +
               "&latitude=" +
               location.coords.latitude +
               "&longitude=" +
@@ -218,17 +220,15 @@ export default function LoadHTMLFormRevision(params) {
               "&company=" +
               userData.clients[0].name +
               "&name[first]=" +
-              "Salvador" +
+              "Mon" +
               "&name[last]=" +
-              "Guinot" +
+              "Vertical" +
               "&next_review_date[day]=" +
               new Date().getDate() +
               "&next_review_date[month]=" +
               (new Date().getMonth() + 1) +
               "&next_review_date[year]=" +
               (new Date().getFullYear() + 1) +
-              "&user_id=" +
-              108 +
               "&asset_manufacturing=" +
               (new Date().getFullYear() - 1) +
               "&fechaUtilizacion[day]=" +
