@@ -154,7 +154,7 @@ export default function Navigation() {
         <Stack.Screen
           name="productDetail"
           component={ProductDetail}
-          options={{ title: "Detalle activo" }}
+          options={{ title: "Detalle del equipo" }}
         />
         <Stack.Screen
           name="pdfviewer"

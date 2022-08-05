@@ -182,7 +182,8 @@ export default function Account(params) {
     // console.log(asset);
 
     var arrayActions = [
-      { value: "incidence_asset", text: "Crear incidencia" },
+      /*  { value: "incidence_asset", text: "Crear incidencia" }, */
+      { value: "ver_ficha", text: "Ver ficha" },
       /*  { value: "locate_asset", text: "Ubicar" }, */
     ];
 
@@ -208,11 +209,11 @@ export default function Account(params) {
     } */
 
     if (asset.product.isEpi == 1 && userData.roles[0].name == "prl_cliente") {
-      arrayActions.push({ value: "review_epi", text: "Revisar EPI" });
+      arrayActions.push({ value: "review_epi", text: "Revisar equipo" });
     }
-    if (asset.product.isEpi == 0) {
+    /*  if (asset.product.isEpi == 0) {
       arrayActions.push({ value: "review_asset", text: "Revisar activo" });
-    }
+    } */
 
     /*   if (userData.roles[0].name == "prl_cliente" && asset.tag.length == 0) {
       arrayActions.push({
@@ -243,10 +244,10 @@ export default function Account(params) {
           />
           <View style={{ flex: 3 }}>
             <View style={styles.fila}>
-              <Text style={styles.name}>{asset.product.modelo}</Text>
+              <Text style={styles.serialnumber}>{asset.serial_number}</Text>
             </View>
             {asset.name ? (
-              <Text>
+              <Text style={styles.nameTitle}>
                 {asset.name.length > 25
                   ? asset.name.substring(0, 22) + "..."
                   : asset.name}
@@ -257,24 +258,24 @@ export default function Account(params) {
             {asset.apto == 1 && asset.status.id != 6 ? (
               <View style={styles.fila}>
                 <View>
-                  {asset.status.id == 2 ? (
+                  {asset.status.id == 2 || asset.status.id == 3 ? (
                     <Button
-                      title="Apto disponible"
+                      title="Apto"
                       buttonStyle={{
                         borderRadius: 17,
                         backgroundColor: "rgba(40, 199, 111, 0.12)",
                       }}
                       titleStyle={{
                         color: "#28C76F",
-                        fontSize: 12,
+                        fontSize: 14,
                         paddingHorizontal: 10,
                       }}
                       containerStyle={{
-                        margin: 5,
-                        marginTop: 16,
+                        marginTop: 12,
                       }}
                     />
-                  ) : asset.status.id == 3 ? (
+                  ) : (
+                    /*   : asset.status.id == 3 ? (
                     <Button
                       title="Apto en uso"
                       buttonStyle={{
@@ -291,7 +292,7 @@ export default function Account(params) {
                         marginTop: 16,
                       }}
                     />
-                  ) : (
+                  )  */
                     <Button
                       title="Inactivo"
                       buttonStyle={{
@@ -304,8 +305,7 @@ export default function Account(params) {
                         paddingHorizontal: 10,
                       }}
                       containerStyle={{
-                        margin: 5,
-                        marginTop: 16,
+                        marginTop: 12,
                       }}
                     />
                   )}
@@ -321,12 +321,11 @@ export default function Account(params) {
                   }}
                   titleStyle={{
                     color: "#FF9F43",
-                    fontSize: 12,
+                    fontSize: 14,
                     paddingHorizontal: 10,
                   }}
                   containerStyle={{
-                    margin: 5,
-                    marginTop: 16,
+                    marginTop: 12,
                   }}
                 />
               </View>
@@ -340,12 +339,11 @@ export default function Account(params) {
                   }}
                   titleStyle={{
                     color: "#F44336",
-                    fontSize: 12,
+                    fontSize: 14,
                     paddingHorizontal: 10,
                   }}
                   containerStyle={{
-                    margin: 5,
-                    marginTop: 16,
+                    marginTop: 12,
                   }}
                 />
               </View>
@@ -364,7 +362,7 @@ export default function Account(params) {
               <Icon
                 type="material-community"
                 name="dots-horizontal"
-                size={24}
+                size={28}
                 color="#000"
               />
             }
@@ -440,14 +438,12 @@ export default function Account(params) {
           <View style={styles.fila}>
             <Text
               style={{
-                fontStyle: "normal",
-                fontWeight: "bold",
-                fontSize: 18,
+                fontSize: 14,
                 alignItems: "center",
-                paddingTop: 10,
+                paddingTop: 0,
               }}
             >
-              {assetSelected.name}
+              {assetSelected.serial_number}
             </Text>
             <Button
               icon={<Icon name="close" size={30} color="black" />}
@@ -462,6 +458,17 @@ export default function Account(params) {
               onPress={() => setVisibleOverlay(false)}
             ></Button>
           </View>
+          <Text
+            style={{
+              fontStyle: "normal",
+              fontWeight: "bold",
+              fontSize: 18,
+              alignItems: "center",
+              paddingTop: 4,
+            }}
+          >
+            {assetSelected.name}
+          </Text>
           <Divider style={styles.divider} />
           <FlatList
             data={assetSelected.arrayActions}
@@ -511,6 +518,15 @@ export default function Account(params) {
       navigation.navigate("loadhtmlformrevisionepi", {
         asset: asset,
       });
+    }
+    if (value == "ver_ficha") {
+      //Crear incidencia
+      navigation.navigate("productDetail", {
+        id_asset: asset.id,
+      });
+      /*   navigation.navigate("loadhtmlformincidencia", {
+        asset: asset,
+      }); */
     }
     if (value == "incidence_asset") {
       //Crear incidencia
@@ -568,7 +584,7 @@ const styles = StyleSheet.create({
     flex: 1,
     borderRadius: 15,
     paddingHorizontal: 9,
-    paddingVertical: 20,
+    paddingVertical: 16,
     marginHorizontal: 24,
     marginTop: 9,
   },
@@ -621,10 +637,15 @@ const styles = StyleSheet.create({
     alignSelf: "flex-start",
     fontSize: 14,
   },
-  nameTitle: {
+  serialnumber: {
     color: "#5E5E5E",
     alignSelf: "flex-start",
     fontSize: 12,
+  },
+  nameTitle: {
+    color: "#5E5E5E",
+    alignSelf: "flex-start",
+    fontSize: 14,
     fontWeight: "bold",
   },
   desc: {
