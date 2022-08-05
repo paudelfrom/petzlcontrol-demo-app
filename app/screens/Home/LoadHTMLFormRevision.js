@@ -220,7 +220,7 @@ export default function LoadHTMLFormRevision(params) {
               "&company=" +
               userData.clients[0].name +
               "&name[first]=" +
-              "Mon" +
+              "Món" +
               "&name[last]=" +
               "Vertical" +
               "&next_review_date[day]=" +
